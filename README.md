@@ -1,70 +1,110 @@
 
-# BigData
+# Hurtownia Danych Bibliotecznych
 
-**Autorzy**: Jakub Mądrowski, Brayan Kostecki, Jan Rasiak
+## 1. Wstęp / Opis projektu
 
-## Opis projektu
+**Library Management System** to aplikacja do zarządzania biblioteką, umożliwiająca administrowanie książkami, czytelnikami oraz wypożyczeniami za pomocą bazy danych MongoDB. Kluczowe funkcjonalności aplikacji obejmują:
 
-Projekt **BigData** koncentruje się na przetwarzaniu i analizie dużych zbiorów danych.
-Repozytorium zawiera skrypty oraz notatniki Jupyter Notebook, które demonstrują różnorodne techniki analizy danych, wizualizacji oraz przetwarzania informacji z plików CSV i JSON.
+- Zarządzanie książkami: dodawanie, edycja, wyświetlanie i usuwanie.
+- Zarządzanie czytelnikami: dodawanie, edycja, wyświetlanie i usuwanie.
+- Zarządzanie wypożyczeniami: rejestrowanie, aktualizacja dat zwrotu i przeglądanie wypożyczeń.
+- Eksport i import danych w formacie JSON.
 
-## Struktura repozytorium
+Aplikacja jest przeznaczona do środowiska terminalowego i napisana w Pythonie.
 
-- **`data.ipynb`**: Notatnik Jupyter zawierający kod generujący dane oraz analizę danych z plików CSV i Kaggle.
-- **`visualisation.ipynb`**: Notatnik Jupyter prezentujący techniki wizualizacji danych.
-- **`main.py`**: Główny skrypt Pythona wraz z API do zarządzania bazą danych MongoDB.
-- **Pliki danych**:
-  - **`books_data.json`**
-  - **`books_ids.json`**
-  - **`borrowing_data.json`**
-  - **`borrowing_dates.json`**
-  - **`data_readers1.csv`**
-  - **`data_readers2.csv`**
-  - **`data_readers3.csv`**
-  - **`data_readers4.csv`**
-  - **`data_readers5.csv`**
-  - **`library_card_ids.json`**
-  - **`readers_data.json`**
+## 2. Cel projektu
 
-## Wymagania
+Celem projektu jest stworzenie narzędzia do kompleksowego zarządzania biblioteką, w tym:
 
-Aby uruchomić skrypty i notatniki zawarte w repozytorium, należy zainstalować następujące pakiety Pythona:
+- Automatyzacja procesów zarządzania książkami i czytelnikami.
+- Śledzenie aktywnych wypożyczeń i zarządzanie terminami zwrotów.
+- Łatwe przenoszenie danych dzięki obsłudze formatu JSON.
 
-```bash
-pip install pandas matplotlib seaborn jupyter
-```
+Projekt wspiera małe i średnie biblioteki, minimalizując pracę manualną i ryzyko błędów.
 
-## Uruchamianie
+## 3. Technologie użyte w projekcie
 
-1. **Klonowanie repozytorium**:
+- **Język programowania:** Python
+- **Baza danych:** MongoDB
+- **Biblioteka:** `pymongo`
+- **Format wymiany danych:** JSON
+- **Środowisko:** terminal
 
+## 4. Wymagania systemowe
+
+### Sprzętowe
+- Procesor: min. 1 GHz
+- RAM: min. 512 MB
+- Dysk: ok. 100 MB
+- Połączenie internetowe (dla MongoDB Atlas)
+
+### Programowe
+- System operacyjny: Windows, macOS, Linux
+- Python: wersja 3.6 lub nowsza
+- Biblioteki Python: `pymongo`, `datetime`, `json`, `os`
+- Baza danych: MongoDB Atlas lub lokalna instancja MongoDB
+
+## 5. Instalacja
+
+1. Pobierz projekt (plik .zip) i rozpakuj.
+2. Upewnij się, że Python jest zainstalowany (zaznacz opcję "Add Python to PATH").
+3. W terminalu przejdź do folderu projektu:
    ```bash
-   git clone https://github.com/Laqerowski/BigData.git
+   cd /ścieżka/do/folderu
    ```
-
-2. **Uruchomienie notatnika Jupyter**:
-
+4. Zainstaluj wymagane biblioteki:
    ```bash
-   jupyter notebook
+   pip install pymongo pandas matplotlib seaborn
    ```
-
-   Następnie otwórz plik `data.ipynb` lub `visualisation.ipynb` w interfejsie Jupyter.
-
-3. **Uruchomienie skryptu Python**:
-
+5. Skonfiguruj bazę danych MongoDB (Atlas lub lokalną instancję).
+6. Uruchom projekt:
    ```bash
    python main.py
    ```
-## API
 
-W pliku `main.py` znajduje się kod do API konsolowego.
+## 6. Funkcjonalności
 
-## Dane
+### Zarządzanie książkami
+- Dodawanie, edycja, wyświetlanie, usuwanie książek.
+- Wyświetlanie ostatnich 10 dodanych książek.
 
-Repozytorium zawiera przykładowe dane w formatach CSV i JSON, które są wykorzystywane w analizach i wizualizacjach.
-Dane te obejmują informacje o książkach, czytelnikach oraz wypożyczeniach.
+### Zarządzanie czytelnikami
+- Dodawanie, edycja, wyświetlanie, usuwanie czytelników.
+- Wyświetlanie ostatnich 10 dodanych czytelników.
 
-## Wizualizacje
+### Zarządzanie wypożyczeniami
+- Dodawanie nowych wypożyczeń.
+- Śledzenie aktywnych wypożyczeń.
+- Automatyczne generowanie terminów zwrotów.
 
-Notatnik `visualisation.ipynb` zawiera przykłady wizualizacji danych z wykorzystaniem bibliotek `matplotlib` oraz `seaborn`. Dane do wizualizacji pochodzą z bazy danych MongoDB.
-Możesz dostosować te wizualizacje do własnych potrzeb, modyfikując kod w notatniku.
+### Eksport i import danych
+- Eksport i import danych z/do plików JSON.
+
+## 7. Przykłady użycia
+
+### Dodanie książki
+1. Wybierz opcję **Enter Data → Book**.
+2. Podaj tytuł, autorów, kategorię, rok wydania, ocenę i liczbę stron.
+
+### Dodanie czytelnika
+1. Wybierz opcję **Enter Data → Reader**.
+2. Podaj imię, nazwisko, e-mail, płeć i rok urodzenia.
+
+### Wyświetlanie książek
+1. Wybierz opcję **Display Data → All Books**.
+
+## 8. Testy
+
+System został przetestowany pod kątem poprawności działania kluczowych funkcji, takich jak:
+- Dodawanie, edytowanie, usuwanie danych.
+- Eksport i import danych.
+
+## 9. Autorzy
+
+- **Jan Rasiak**
+- **Brajan Kostecki**
+- **Jakub Mądrowski**
+
+---
+
+**Uwaga:** Projekt jest dostosowany do małych i średnich bibliotek. Zachęcamy do testowania i zgłaszania uwag!
