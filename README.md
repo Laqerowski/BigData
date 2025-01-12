@@ -1,55 +1,70 @@
+
 # BigData
 
-**Autorzy:** Jakub Mądrowski, Brayan Kostecki, Jan Rasiak
+**Autorzy**: Jakub Mądrowski, Brayan Kostecki, Jan Rasiak
 
 ## Opis projektu
 
-Projekt **BigData** jest poświęcony przetwarzaniu i analizie dużych zbiorów danych. W ramach tego projektu znajdują się skrypty i notatniki Jupyter Notebook, które demonstrują różne techniki analizy danych, wizualizacji oraz przetwarzania informacji z plików CSV i JSON.
+Projekt **BigData** koncentruje się na przetwarzaniu i analizie dużych zbiorów danych.
+Repozytorium zawiera skrypty oraz notatniki Jupyter Notebook, które demonstrują różnorodne techniki analizy danych, wizualizacji oraz przetwarzania informacji z plików CSV i JSON.
 
 ## Struktura repozytorium
 
-- `data.ipynb`: Notatnik Jupyter zawierający analizę danych z plików CSV.
-- `wizualizacja.ipynb`: Notatnik Jupyter prezentujący techniki wizualizacji danych.
-- `main.py`: Główny skrypt Pythona do przetwarzania danych.
-- `MOCK_DATA.csv`, `MOCK_DATA (1).csv`, `MOCK_DATA (2).csv`, `MOCK_DATA (3).csv`, `MOCK_DATA (4).csv`: Przykładowe pliki CSV używane w analizie.
-- `books_data.json`, `books_ids.json`, `borrowing_data.json`, `borrowing_dates.json`, `library_card_ids.json`, `readers_data.json`: Przykładowe pliki JSON zawierające dane do analizy.
+- **`data.ipynb`**: Notatnik Jupyter zawierający kod generujący dane oraz analizę danych z plików CSV i Kaggle.
+- **`visualisation.ipynb`**: Notatnik Jupyter prezentujący techniki wizualizacji danych.
+- **`main.py`**: Główny skrypt Pythona wraz z API do zarządzania bazą danych MongoDB.
+- **Pliki danych**:
+  - **`books_data.json`**
+  - **`books_ids.json`**
+  - **`borrowing_data.json`**
+  - **`borrowing_dates.json`**
+  - **`data_readers1.csv`**
+  - **`data_readers2.csv`**
+  - **`data_readers3.csv`**
+  - **`data_readers4.csv`**
+  - **`data_readers5.csv`**
+  - **`library_card_ids.json`**
+  - **`readers_data.json`**
 
 ## Wymagania
 
-Aby uruchomić skrypty i notatniki, upewnij się, że masz zainstalowane następujące oprogramowanie:
-
-- Python 3.x
-- Jupyter Notebook
-- Biblioteki Python: `pandas`, `numpy`, `matplotlib`, `seaborn`
-
-Możesz zainstalować wymagane biblioteki za pomocą polecenia:
+Aby uruchomić skrypty i notatniki zawarte w repozytorium, należy zainstalować następujące pakiety Pythona:
 
 ```bash
-pip install pandas numpy matplotlib seaborn
+pip install pandas matplotlib seaborn jupyter
 ```
 
-## Uruchamianie notatników Jupyter
+## Uruchamianie
 
-Aby uruchomić notatniki Jupyter:
+1. **Klonowanie repozytorium**:
 
-1. Otwórz terminal lub wiersz poleceń.
-2. Przejdź do katalogu z repozytorium `BigData`.
-3. Uruchom Jupyter Notebook poleceniem:
+   ```bash
+   git clone https://github.com/Laqerowski/BigData.git
+   ```
+
+2. **Uruchomienie notatnika Jupyter**:
 
    ```bash
    jupyter notebook
    ```
 
-4. W przeglądarce otworzy się interfejs Jupyter, gdzie możesz wybrać i uruchomić `data.ipynb` lub `wizualizacja.ipynb`.
+   Następnie otwórz plik `data.ipynb` lub `visualisation.ipynb` w interfejsie Jupyter.
 
-## Uruchamianie skryptu Python
-
-Aby uruchomić skrypt `main.py`:
-
-1. Otwórz terminal lub wiersz poleceń.
-2. Przejdź do katalogu z repozytorium `BigData`.
-3. Wykonaj polecenie:
+3. **Uruchomienie skryptu Python**:
 
    ```bash
    python main.py
    ```
+## API
+
+W pliku `main.py` znajduje się kod do API konsolowego.
+
+## Dane
+
+Repozytorium zawiera przykładowe dane w formatach CSV i JSON, które są wykorzystywane w analizach i wizualizacjach.
+Dane te obejmują informacje o książkach, czytelnikach oraz wypożyczeniach.
+
+## Wizualizacje
+
+Notatnik `visualisation.ipynb` zawiera przykłady wizualizacji danych z wykorzystaniem bibliotek `matplotlib` oraz `seaborn`. Dane do wizualizacji pochodzą z bazy danych MongoDB.
+Możesz dostosować te wizualizacje do własnych potrzeb, modyfikując kod w notatniku.
